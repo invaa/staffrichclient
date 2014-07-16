@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.staff</groupId>
   <artifactId>StaffRichClient</artifactId>
-  <version>0.0.4-SNAPSHOT-${timestamp}</version>
+  <version>0.0.5-SNAPSHOT-${timestamp}</version>
  
  <!-- DUMMY SCM -->
  <scm>
