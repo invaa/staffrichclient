@@ -170,9 +170,15 @@ public class MainDialog {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				TaskDialog add = new TaskDialog();
-				add.setANewTask(true);
-				add.open();
-				add.setParentDialog(getDialog());
+				
+				try {
+					add.setANewTask(true);
+					add.open();
+					add.setParentDialog(getDialog());
+				}
+				finally {
+					reloadTable();
+				}
 			}
 		});
 		btnNewTask.setText("New task");
