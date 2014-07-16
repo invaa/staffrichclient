@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.staff</groupId>
   <artifactId>StaffRichClient</artifactId>
-  <version>0.0.4-SNAPSHOT</version>
+  <version>0.0.4-SNAPSHOT-${buildNumber}</version>
   <build>
     <sourceDirectory>src</sourceDirectory>
     <resources>
@@ -56,6 +56,23 @@
       <dependencies>
     
     </dependencies>
+    </plugin>
+ <plugin>
+      <groupId>org.codehaus.mojo</groupId>
+      <artifactId>buildnumber-maven-plugin</artifactId>
+      <executions>
+        <execution>
+          <phase>initialize</phase>
+          <goals>
+            <goal>create</goal>
+          </goals>
+        </execution>
+      </executions>
+      <configuration>
+        <doCheck>false</doCheck>
+        <doUpdate>false</doUpdate>
+        <timestampFormat>{0, date, yyyy-MM-dd HH:mm:ss}</timestampFormat>
+      </configuration>
     </plugin>
     </plugins>
   </build>
