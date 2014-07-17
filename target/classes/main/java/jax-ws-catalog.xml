@@ -1,0 +1,4 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+        <system systemId="http://localhost/wsdl/SOAService.wsdl"
+                uri="wsdl/SOAService.wsdl"/>
+    </catalog>
