@@ -3,9 +3,11 @@ package org.staff.settings;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.prefs.Preferences;
 
 import org.eclipse.swt.widgets.DateTime;
+import org.staff.utils.Convertor;
  
 public class ApplicationSettings 
 {
@@ -55,38 +57,35 @@ public class ApplicationSettings
         return par;
     }
     
-    public void saveHideDone(String tasksearchpattern)
+    public void saveTaskSearchPattern(String tasksearchpattern)
     {	
         userPrefs.put("tasksearchpattern", tasksearchpattern);
     }
     
-    public DateTime getDateBegin()
+    public GregorianCalendar getDateBegin()
     {
-    	SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM.dd.yyyy");
-       	
-    	String par = userPrefs.get("datebegin", "");
-    	
-    	Date date = null;
-       
-    	try
-        {
-            date = simpleDateFormat.parse(par);
-
-            System.out.println("date : "+simpleDateFormat.format(date));
-        }
-        catch (ParseException ex)
-        {
-            System.out.println("Exception "+ex);
-        }
-    	
-    	//DateTime dt = date.;
-    	
-    	return null;
+    	Date date = new Date();
+    	SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+  
+    	String par = userPrefs.get("datebegin", sdf.format(date));
+    	return Convertor.stringToGregorianCalendar(par);
     }
     
-    public void saveDateBegin(DateTime dateBegin)
+    public void saveDateBegin(GregorianCalendar gregorianCalendar)
     {	
-        //userPrefs.put("tasksearchpattern", tasksearchpattern);
+       userPrefs.put("datebegin", Convertor.gregorianCalendarToString(gregorianCalendar));
     }
+
+	public GregorianCalendar getDateEnd() {
+		Date date = new Date();
+    	SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
+		
+		String par = userPrefs.get("dateend", sdf.format(date));
+    	return Convertor.stringToGregorianCalendar(par);
+    }
+	
+	public void saveDateEnd(GregorianCalendar gregorianCalendar) {
+	    userPrefs.put("dateend", Convertor.gregorianCalendarToString(gregorianCalendar));
+	}
     
 }

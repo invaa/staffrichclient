@@ -13,6 +13,7 @@ import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.apache.commons.codec.binary.Base64;
+import org.eclipse.swt.widgets.DateTime;
 
 public final class Convertor {
 
@@ -82,7 +83,37 @@ public final class Convertor {
 		
 		return gDate;
 	}
-	
+
+	public static GregorianCalendar getGregorianDateFromSWTDateTime(DateTime dDate) {
+		return new GregorianCalendar(dDate.getYear(), dDate.getMonth(), dDate.getDay());
+	}
+
+	/**
+	 * @param gregorianCalendar
+	 * @return
+	 */
+	public static String gregorianCalendarToString(GregorianCalendar gregorianCalendar) {
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.MM.yyyy");
+   		
+    	simpleDateFormat.setCalendar(gregorianCalendar);
+        String dateFormatted = simpleDateFormat.format(gregorianCalendar.getTime());
+		return dateFormatted;
+	}
+
+	/**
+	 * @param par
+	 * @return
+	 */
+	public static GregorianCalendar stringToGregorianCalendar(String par) {
+		String[] splitDate = par.split("[.]"); //assuming "MM.dd.yyyy" stored value
+    	
+    	int days = Integer.parseInt(splitDate[0]);
+    	int month = Integer.parseInt(splitDate[1]) - 1;
+    	int year = Integer.parseInt(splitDate[2]);
+
+    	GregorianCalendar dateConverted = new GregorianCalendar(year, month, days);
+		return dateConverted;
+	}
 	
 	
 //	TimeZone cet = TimeZone.getTimeZone("CET");

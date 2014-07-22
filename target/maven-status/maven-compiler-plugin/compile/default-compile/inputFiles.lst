@@ -20,7 +20,6 @@ D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\GetProjects.java
 D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\ProjectStage.java
 D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\SetStatusPausedResponse.java
 D:\workspace\StaffRichClient\src\main\java\org\staff\richclient\AboutWindow.java
-D:\workspace\StaffRichClient\src\main\java\org\staff\utils\ApplicationSettings.java
 D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\SetStatusPaused.java
 D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\GetCurrentUser.java
 D:\workspace\StaffRichClient\src\main\java\org\staff\richclient\TaskDialog.java
@@ -44,13 +43,14 @@ D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\FindProjectsStages
 D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\SetAutoFillDailyReportsResponse.java
 D:\workspace\StaffRichClient\src\main\java\org\staff\settings\ApplicationSettings.java
 D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\SetStatusInProgress.java
-D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\CreateTaskResponse.java
 D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\GetStatuses.java
 D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\GetStatusDoneResponse.java
+D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\CreateTaskResponse.java
 D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\GetProjectsStages.java
 D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\GetStatusesResponse.java
 D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\ObjectFactory.java
 D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\FindStatusesResponse.java
+D:\workspace\StaffRichClient\src\main\java\org\eclipse\wb\swt\SWTResourceManager.java
 D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\FindStatuses.java
 D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\GetProjectsStagesResponse.java
 D:\workspace\StaffRichClient\src\main\java\org\staff\utils\WSHandler.java
@@ -63,7 +63,6 @@ D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\TaskList.java
 D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\EmployeeList.java
 D:\workspace\StaffRichClient\src\main\java\net\assino\app1msc\GetStatusInProgress.java
 D:\workspace\StaffRichClient\src\main\java\org\staff\utils\ErrorVisualizer.java
-D:\workspace\StaffRichClient\src\main\java\org\staff\richclient\Class.java
 D:\workspace\StaffRichClient\src\main\java\org\staff\settings\colortheme\MainDialogColorTheme.java
 D:\workspace\StaffRichClient\src\main\java\org\staff\richclient\MainDialog.java
 D:\workspace\StaffRichClient\src\main\java\org\staff\utils\Convertor.java

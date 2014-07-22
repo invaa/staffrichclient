@@ -59,7 +59,7 @@ public class AboutWindow {
 		lblAssinoErpstaffRich.setText("assino ERP-Staff Rich client");
 		
 		Label lblVersion = new Label(shlAbout, SWT.NONE);
-		lblVersion.setText("version 0.3 by Invaa (c)");
+		lblVersion.setText("version 0.0.6 by Invaa (c)");
 		lblVersion.setBounds(148, 126, 134, 35);
 
 	}

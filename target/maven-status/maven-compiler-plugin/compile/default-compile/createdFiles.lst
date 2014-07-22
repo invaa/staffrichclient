@@ -10,7 +10,6 @@ net\assino\app1msc\EmployeeList.class
 net\assino\app1msc\GetAutoFillDailyReportsResponse.class
 net\assino\app1msc\ProjectStageList.class
 net\assino\app1msc\GetStatuses.class
-org\staff\settings\Constants.class
 org\staff\richclient\MainDialog$9.class
 org\staff\richclient\TaskDialog.class
 org\staff\richclient\MainDialog$7.class
@@ -31,7 +30,6 @@ net\assino\app1msc\Status.class
 org\staff\richclient\MainDialog$8$5.class
 net\assino\app1msc\GetEmployees.class
 org\staff\richclient\SettingsDialog$1.class
-org\eclipse\wb\swt\SWTResourceManager.class
 net\assino\app1msc\ObjectFactory.class
 net\assino\app1msc\TaskManager.class
 net\assino\app1msc\Project.class
@@ -39,7 +37,6 @@ org\staff\richclient\TaskDialog$4.class
 net\assino\app1msc\SetStatusDone.class
 org\staff\richclient\MainDialog$5.class
 net\assino\app1msc\GetStatusInDevGroupResponse.class
-org\staff\utils\ApplicationSettings.class
 org\staff\richclient\MainDialog$8$4.class
 org\staff\utils\ErrorVisualizer.class
 org\staff\richclient\TaskDialog$12.class
@@ -47,7 +44,6 @@ org\staff\richclient\TaskDialog$11.class
 net\assino\app1msc\SetAutoFillDailyReportsResponse.class
 net\assino\app1msc\GetStatusDoneResponse.class
 org\staff\richclient\AboutWindow.class
-org\staff\settings\ApplicationSettings.class
 net\assino\app1msc\GetStatusPaused.class
 org\staff\richclient\MainDialog$1.class
 net\assino\app1msc\UpdateTask.class
@@ -85,10 +81,8 @@ org\staff\utils\WSHandler.class
 net\assino\app1msc\GetStatusPausedResponse.class
 net\assino\app1msc\GetStatusInProgress.class
 net\assino\app1msc\SetStatusDeployed.class
-org\staff\richclient\Class.class
 org\staff\richclient\TaskDialog$7.class
 net\assino\app1msc\CreateTask.class
-net\assino\app1msc\TaskStatus.class
 net\assino\app1msc\GetProjectsStages.class
 org\staff\utils\Convertor.class
 org\staff\richclient\TaskDialog$2.class

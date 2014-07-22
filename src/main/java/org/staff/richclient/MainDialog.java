@@ -1,7 +1,7 @@
 package org.staff.richclient;
 
+import java.util.Calendar;
 import java.util.GregorianCalendar;
-
 
 import net.assino.app1msc.Task;
 import net.assino.app1msc.TaskList;
@@ -12,7 +12,6 @@ import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
-
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
@@ -28,8 +27,10 @@ import org.eclipse.swt.graphics.Color;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.graphics.Point;
+import org.staff.settings.ApplicationSettings;
 import org.staff.settings.Constants;
 import org.staff.settings.colortheme.MainDialogColorTheme;
+import org.staff.utils.Convertor;
 import org.staff.utils.ErrorVisualizer;
 import org.staff.utils.WSHandler;
 import org.eclipse.swt.widgets.Text;
@@ -39,8 +40,6 @@ import org.eclipse.swt.program.Program;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.swt.widgets.DateTime;
-import org.eclipse.swt.events.ShellAdapter;
-import org.eclipse.swt.events.ShellEvent;
 import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 
@@ -63,24 +62,46 @@ public class MainDialog {
 	
 	private Task selectedTask = null;
 	private Button btnHideDone;
+	
+    private static State state;
 
 	/**
 	 * Launch the application.
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		try {
-			MainDialog window = new MainDialog();
-			Initialize();
+		MainDialog window = new MainDialog();
+		try {			
+			Initialize(window);
 			window.open();
-			
 		} catch (Exception e) {
-			//e.printStackTrace();
 			ErrorVisualizer.showMessage(shlStaffClient, e);
+		} finally {
+			saveSettings(state);
 		}
 	}
 
-	private static void Initialize() {
+	private static void saveSettings(State state) {
+		ApplicationSettings as = new ApplicationSettings();
+		as.saveDateBegin(state.getdDateBegin());
+		as.saveDateEnd(state.getdDateEnd());	
+		as.saveHideDone(state.isHideDone());
+	}
+
+	private static void loadSettings(MainDialog window) {
+		ApplicationSettings as = new ApplicationSettings();	
+		window.setdDateBegin(as.getDateBegin());
+		window.setdDateEnd(as.getDateEnd());
+		window.setHideDone(as.getHideDone());
+		
+		MainDialog.state.setdDateBegin(Convertor.getGregorianDateFromSWTDateTime(window.getdDateBegin()));
+		MainDialog.state.setdDateEnd(Convertor.getGregorianDateFromSWTDateTime(window.getdDateEnd()));
+		MainDialog.state.setHideDone(window.getHideDone());
+	}
+
+	private static void Initialize(MainDialog window) {
+		window.state = window.new State();
+		
 		connectionOK = WSHandler.testConnector();
 		
 		if (connectionOK) {
@@ -88,7 +109,6 @@ public class MainDialog {
 			Display display = new Display();
 			setDefaultColorTheme(display);
 		}
-		
 	}
 
 	/**
@@ -130,6 +150,8 @@ public class MainDialog {
 		shlStaffClient.open();
 		shlStaffClient.layout();
 		
+		loadSettings(this);
+		
 		if (!connectionOK) {
 			SettingsDialog sd = new SettingsDialog();
 			sd.open();
@@ -147,20 +169,7 @@ public class MainDialog {
 	 */
 	protected void createContents() {
 		shlStaffClient = new Shell();
-		shlStaffClient.addShellListener(new ShellAdapter() {
-			@Override
-			public void shellClosed(ShellEvent e) {
-				//We need to save some filter values here
-				//btnHideDone.getSelection()
-				//textSearchName
-				//dDateBegin
-				//dDateEnd
-				
-				//TODO: save settings
-				//ApplicationSettings as = new ApplicationSettings();
-
-			}
-		});
+	
 		shlStaffClient.setSize(805, 300);
 		shlStaffClient.setText("Staff client");
 		shlStaffClient.setLayout(new GridLayout(8, false));
@@ -200,15 +209,19 @@ public class MainDialog {
 			textSearchName.setText(WSHandler.getCurrentEmployee().getName());
 		}
 		
-		dDateBegin = new DateTime(shlStaffClient, SWT.DROP_DOWN);
+		setdDateBegin(new DateTime(shlStaffClient, SWT.DROP_DOWN));
 		
-		dDateEnd = new DateTime(shlStaffClient, SWT.DROP_DOWN);
+		setdDateEnd(new DateTime(shlStaffClient, SWT.DROP_DOWN));
 		
 		btnHideDone = new Button(shlStaffClient, SWT.CHECK);
 		btnHideDone.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				reloadTable();
+				
+				if (e.widget instanceof Button) {
+					state.setHideDone(btnHideDone.getSelection());
+				};
 			}
 		});
 		btnHideDone.setText("hide done");
@@ -454,8 +467,8 @@ public class MainDialog {
 		tasksTable.removeAll();
 		taskList = null;
 		
-		GregorianCalendar grDateEnd = new GregorianCalendar(dDateEnd.getYear(), dDateEnd.getMonth(), dDateEnd.getDay());
-		GregorianCalendar grDateBegin = new GregorianCalendar(dDateBegin.getYear(), dDateBegin.getMonth(), dDateBegin.getDay());
+		GregorianCalendar grDateEnd = Convertor.getGregorianDateFromSWTDateTime(getdDateEnd());
+		GregorianCalendar grDateBegin = Convertor.getGregorianDateFromSWTDateTime(getdDateBegin());
 		
 		taskList = WSHandler.getTaskList(grDateBegin, grDateEnd, textSearchName.getText());
 				
@@ -547,4 +560,88 @@ public class MainDialog {
 		  }
 		  tasksTable.setRedraw(true);
 	}
+
+	private DateTime getdDateBegin() {
+		return dDateBegin;
+	}
+
+	private void setdDateBegin(DateTime dDateBegin) {
+		this.dDateBegin = dDateBegin;
+		dDateBegin.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (e.widget instanceof DateTime) {
+					state.setdDateBegin(Convertor.getGregorianDateFromSWTDateTime((DateTime)e.widget));
+				};
+			}
+		});
+	}
+	
+	private void setdDateEnd(DateTime dDateEnd) {
+		this.dDateEnd = dDateEnd;
+		
+		dDateEnd.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				if (e.widget instanceof DateTime) {
+					state.setdDateEnd(Convertor.getGregorianDateFromSWTDateTime((DateTime)e.widget));
+				};
+			}
+		});
+	}
+	
+	private DateTime getdDateEnd() {
+		return dDateEnd;
+	}
+
+	private void setdDateBegin(GregorianCalendar gregorianCalendar) {
+		this.dDateBegin.setYear(gregorianCalendar.get(Calendar.YEAR));
+		this.dDateBegin.setMonth(gregorianCalendar.get(Calendar.MONTH));
+		this.dDateBegin.setDay(gregorianCalendar.get(Calendar.DAY_OF_MONTH));
+	}
+	
+	private void setdDateEnd(GregorianCalendar gregorianCalendar) {
+		this.dDateEnd.setYear(gregorianCalendar.get(Calendar.YEAR));
+		this.dDateEnd.setMonth(gregorianCalendar.get(Calendar.MONTH));
+		this.dDateEnd.setDay(gregorianCalendar.get(Calendar.DAY_OF_MONTH));
+	}
+	
+	private void setHideDone(boolean selected) {
+		this.btnHideDone.setSelection(selected);
+	}
+	
+	private boolean getHideDone() {
+		return this.btnHideDone.getSelection();
+	}
+	
+	public class State {
+		private GregorianCalendar dDateBegin;
+		private GregorianCalendar dDateEnd;
+		private boolean hideDone;
+		
+		public State() {} 
+		
+		public GregorianCalendar getdDateBegin() {
+			return dDateBegin;
+		}
+		public void setdDateBegin(GregorianCalendar dDateBegin) {
+			this.dDateBegin = dDateBegin;
+		}
+		public GregorianCalendar getdDateEnd() {
+			return dDateEnd;
+		}
+		public void setdDateEnd(GregorianCalendar dDateEnd) {
+			this.dDateEnd = dDateEnd;
+		}
+
+		public boolean isHideDone() {
+			return hideDone;
+		}
+
+		public void setHideDone(boolean hideDone) {
+			this.hideDone = hideDone;
+		}
+	}
+
 }
+
