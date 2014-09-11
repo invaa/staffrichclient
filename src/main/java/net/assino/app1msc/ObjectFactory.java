@@ -30,27 +30,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link FindProjects }
+     * Create an instance of {@link SetAutoFillDailyReportsResponse }
      * 
      */
-    public FindProjects createFindProjects() {
-        return new FindProjects();
+    public SetAutoFillDailyReportsResponse createSetAutoFillDailyReportsResponse() {
+        return new SetAutoFillDailyReportsResponse();
     }
 
     /**
-     * Create an instance of {@link GetStatusDone }
+     * Create an instance of {@link SetStatusInProgressResponse }
      * 
      */
-    public GetStatusDone createGetStatusDone() {
-        return new GetStatusDone();
+    public SetStatusInProgressResponse createSetStatusInProgressResponse() {
+        return new SetStatusInProgressResponse();
     }
 
     /**
-     * Create an instance of {@link GetStatusPausedResponse }
+     * Create an instance of {@link GetStatusInProgressResponse }
      * 
      */
-    public GetStatusPausedResponse createGetStatusPausedResponse() {
-        return new GetStatusPausedResponse();
+    public GetStatusInProgressResponse createGetStatusInProgressResponse() {
+        return new GetStatusInProgressResponse();
     }
 
     /**
@@ -62,6 +62,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link UpdateTaskResponse }
+     * 
+     */
+    public UpdateTaskResponse createUpdateTaskResponse() {
+        return new UpdateTaskResponse();
+    }
+
+    /**
      * Create an instance of {@link FindTasks }
      * 
      */
@@ -70,35 +78,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetProjectsStages }
+     * Create an instance of {@link GetStatusInProgress }
      * 
      */
-    public GetProjectsStages createGetProjectsStages() {
-        return new GetProjectsStages();
+    public GetStatusInProgress createGetStatusInProgress() {
+        return new GetStatusInProgress();
     }
 
     /**
-     * Create an instance of {@link Project }
+     * Create an instance of {@link SetStatusDeployed }
      * 
      */
-    public Project createProject() {
-        return new Project();
-    }
-
-    /**
-     * Create an instance of {@link GetEmployees }
-     * 
-     */
-    public GetEmployees createGetEmployees() {
-        return new GetEmployees();
-    }
-
-    /**
-     * Create an instance of {@link CreateTask }
-     * 
-     */
-    public CreateTask createCreateTask() {
-        return new CreateTask();
+    public SetStatusDeployed createSetStatusDeployed() {
+        return new SetStatusDeployed();
     }
 
     /**
@@ -110,19 +102,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetStatusInDevGroup }
+     * Create an instance of {@link FindStatuses }
      * 
      */
-    public GetStatusInDevGroup createGetStatusInDevGroup() {
-        return new GetStatusInDevGroup();
+    public FindStatuses createFindStatuses() {
+        return new FindStatuses();
     }
 
     /**
-     * Create an instance of {@link FindTasksResponse }
+     * Create an instance of {@link GetTasksResponse }
      * 
      */
-    public FindTasksResponse createFindTasksResponse() {
-        return new FindTasksResponse();
+    public GetTasksResponse createGetTasksResponse() {
+        return new GetTasksResponse();
     }
 
     /**
@@ -134,11 +126,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link FindStatusesResponse }
+     * Create an instance of {@link GetStatusesResponse }
      * 
      */
-    public FindStatusesResponse createFindStatusesResponse() {
-        return new FindStatusesResponse();
+    public GetStatusesResponse createGetStatusesResponse() {
+        return new GetStatusesResponse();
     }
 
     /**
@@ -150,67 +142,27 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetCurrentUser }
+     * Create an instance of {@link GetStatusDone }
      * 
      */
-    public GetCurrentUser createGetCurrentUser() {
-        return new GetCurrentUser();
+    public GetStatusDone createGetStatusDone() {
+        return new GetStatusDone();
     }
 
     /**
-     * Create an instance of {@link GetProjectsResponse }
+     * Create an instance of {@link FindProjects }
      * 
      */
-    public GetProjectsResponse createGetProjectsResponse() {
-        return new GetProjectsResponse();
+    public FindProjects createFindProjects() {
+        return new FindProjects();
     }
 
     /**
-     * Create an instance of {@link CreateTaskResponse }
+     * Create an instance of {@link GetAutoFillDailyReports }
      * 
      */
-    public CreateTaskResponse createCreateTaskResponse() {
-        return new CreateTaskResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetProjectsStagesResponse }
-     * 
-     */
-    public GetProjectsStagesResponse createGetProjectsStagesResponse() {
-        return new GetProjectsStagesResponse();
-    }
-
-    /**
-     * Create an instance of {@link ProjectStage }
-     * 
-     */
-    public ProjectStage createProjectStage() {
-        return new ProjectStage();
-    }
-
-    /**
-     * Create an instance of {@link GetStatusInDevGroupResponse }
-     * 
-     */
-    public GetStatusInDevGroupResponse createGetStatusInDevGroupResponse() {
-        return new GetStatusInDevGroupResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetStatusDeployedResponse }
-     * 
-     */
-    public GetStatusDeployedResponse createGetStatusDeployedResponse() {
-        return new GetStatusDeployedResponse();
-    }
-
-    /**
-     * Create an instance of {@link UpdateTask }
-     * 
-     */
-    public UpdateTask createUpdateTask() {
-        return new UpdateTask();
+    public GetAutoFillDailyReports createGetAutoFillDailyReports() {
+        return new GetAutoFillDailyReports();
     }
 
     /**
@@ -230,83 +182,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetEmployeesResponse }
+     * Create an instance of {@link GetStatusPausedResponse }
      * 
      */
-    public GetEmployeesResponse createGetEmployeesResponse() {
-        return new GetEmployeesResponse();
+    public GetStatusPausedResponse createGetStatusPausedResponse() {
+        return new GetStatusPausedResponse();
     }
 
     /**
-     * Create an instance of {@link EmployeeList }
+     * Create an instance of {@link SetStatusPaused }
      * 
      */
-    public EmployeeList createEmployeeList() {
-        return new EmployeeList();
-    }
-
-    /**
-     * Create an instance of {@link GetCurrentUserResponse }
-     * 
-     */
-    public GetCurrentUserResponse createGetCurrentUserResponse() {
-        return new GetCurrentUserResponse();
-    }
-
-    /**
-     * Create an instance of {@link Employee }
-     * 
-     */
-    public Employee createEmployee() {
-        return new Employee();
-    }
-
-    /**
-     * Create an instance of {@link GetStatusDeployed }
-     * 
-     */
-    public GetStatusDeployed createGetStatusDeployed() {
-        return new GetStatusDeployed();
-    }
-
-    /**
-     * Create an instance of {@link GetStatusPaused }
-     * 
-     */
-    public GetStatusPaused createGetStatusPaused() {
-        return new GetStatusPaused();
-    }
-
-    /**
-     * Create an instance of {@link UpdateTaskResponse }
-     * 
-     */
-    public UpdateTaskResponse createUpdateTaskResponse() {
-        return new UpdateTaskResponse();
-    }
-
-    /**
-     * Create an instance of {@link SetAutoFillDailyReports }
-     * 
-     */
-    public SetAutoFillDailyReports createSetAutoFillDailyReports() {
-        return new SetAutoFillDailyReports();
-    }
-
-    /**
-     * Create an instance of {@link GetTasksResponse }
-     * 
-     */
-    public GetTasksResponse createGetTasksResponse() {
-        return new GetTasksResponse();
-    }
-
-    /**
-     * Create an instance of {@link SetAutoFillDailyReportsResponse }
-     * 
-     */
-    public SetAutoFillDailyReportsResponse createSetAutoFillDailyReportsResponse() {
-        return new SetAutoFillDailyReportsResponse();
+    public SetStatusPaused createSetStatusPaused() {
+        return new SetStatusPaused();
     }
 
     /**
@@ -334,67 +222,51 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link SetStatusInProgress }
+     * Create an instance of {@link GetStatusInDevGroup }
      * 
      */
-    public SetStatusInProgress createSetStatusInProgress() {
-        return new SetStatusInProgress();
+    public GetStatusInDevGroup createGetStatusInDevGroup() {
+        return new GetStatusInDevGroup();
     }
 
     /**
-     * Create an instance of {@link GetTasks }
+     * Create an instance of {@link GetStatusInDevGroupResponse }
      * 
      */
-    public GetTasks createGetTasks() {
-        return new GetTasks();
+    public GetStatusInDevGroupResponse createGetStatusInDevGroupResponse() {
+        return new GetStatusInDevGroupResponse();
     }
 
     /**
-     * Create an instance of {@link SetStatusDone }
+     * Create an instance of {@link GetEmployees }
      * 
      */
-    public SetStatusDone createSetStatusDone() {
-        return new SetStatusDone();
+    public GetEmployees createGetEmployees() {
+        return new GetEmployees();
     }
 
     /**
-     * Create an instance of {@link GetStatusInProgress }
+     * Create an instance of {@link UpdateTask }
      * 
      */
-    public GetStatusInProgress createGetStatusInProgress() {
-        return new GetStatusInProgress();
+    public UpdateTask createUpdateTask() {
+        return new UpdateTask();
     }
 
     /**
-     * Create an instance of {@link GetStatusesResponse }
+     * Create an instance of {@link GetEmployeesResponse }
      * 
      */
-    public GetStatusesResponse createGetStatusesResponse() {
-        return new GetStatusesResponse();
+    public GetEmployeesResponse createGetEmployeesResponse() {
+        return new GetEmployeesResponse();
     }
 
     /**
-     * Create an instance of {@link GetStatuses }
+     * Create an instance of {@link EmployeeList }
      * 
      */
-    public GetStatuses createGetStatuses() {
-        return new GetStatuses();
-    }
-
-    /**
-     * Create an instance of {@link FindEmployees }
-     * 
-     */
-    public FindEmployees createFindEmployees() {
-        return new FindEmployees();
-    }
-
-    /**
-     * Create an instance of {@link SetStatusInProgressResponse }
-     * 
-     */
-    public SetStatusInProgressResponse createSetStatusInProgressResponse() {
-        return new SetStatusInProgressResponse();
+    public EmployeeList createEmployeeList() {
+        return new EmployeeList();
     }
 
     /**
@@ -406,59 +278,51 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetAutoFillDailyReports }
+     * Create an instance of {@link Project }
      * 
      */
-    public GetAutoFillDailyReports createGetAutoFillDailyReports() {
-        return new GetAutoFillDailyReports();
+    public Project createProject() {
+        return new Project();
     }
 
     /**
-     * Create an instance of {@link SetStatusPaused }
+     * Create an instance of {@link GetStatusDeployedResponse }
      * 
      */
-    public SetStatusPaused createSetStatusPaused() {
-        return new SetStatusPaused();
+    public GetStatusDeployedResponse createGetStatusDeployedResponse() {
+        return new GetStatusDeployedResponse();
     }
 
     /**
-     * Create an instance of {@link SetStatusDeployed }
+     * Create an instance of {@link GetStatusPaused }
      * 
      */
-    public SetStatusDeployed createSetStatusDeployed() {
-        return new SetStatusDeployed();
+    public GetStatusPaused createGetStatusPaused() {
+        return new GetStatusPaused();
     }
 
     /**
-     * Create an instance of {@link SetStatusDeployedResponse }
+     * Create an instance of {@link GetProjectsStages }
      * 
      */
-    public SetStatusDeployedResponse createSetStatusDeployedResponse() {
-        return new SetStatusDeployedResponse();
+    public GetProjectsStages createGetProjectsStages() {
+        return new GetProjectsStages();
     }
 
     /**
-     * Create an instance of {@link SetStatusPausedResponse }
+     * Create an instance of {@link GetStatusDeployed }
      * 
      */
-    public SetStatusPausedResponse createSetStatusPausedResponse() {
-        return new SetStatusPausedResponse();
+    public GetStatusDeployed createGetStatusDeployed() {
+        return new GetStatusDeployed();
     }
 
     /**
-     * Create an instance of {@link GetStatusDoneResponse }
+     * Create an instance of {@link SetAutoFillDailyReports }
      * 
      */
-    public GetStatusDoneResponse createGetStatusDoneResponse() {
-        return new GetStatusDoneResponse();
-    }
-
-    /**
-     * Create an instance of {@link GetStatusInProgressResponse }
-     * 
-     */
-    public GetStatusInProgressResponse createGetStatusInProgressResponse() {
-        return new GetStatusInProgressResponse();
+    public SetAutoFillDailyReports createSetAutoFillDailyReports() {
+        return new SetAutoFillDailyReports();
     }
 
     /**
@@ -470,11 +334,139 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link FindStatuses }
+     * Create an instance of {@link GetStatusDoneResponse }
      * 
      */
-    public FindStatuses createFindStatuses() {
-        return new FindStatuses();
+    public GetStatusDoneResponse createGetStatusDoneResponse() {
+        return new GetStatusDoneResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetProjectsResponse }
+     * 
+     */
+    public GetProjectsResponse createGetProjectsResponse() {
+        return new GetProjectsResponse();
+    }
+
+    /**
+     * Create an instance of {@link FindTasksResponse }
+     * 
+     */
+    public FindTasksResponse createFindTasksResponse() {
+        return new FindTasksResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetStatuses }
+     * 
+     */
+    public GetStatuses createGetStatuses() {
+        return new GetStatuses();
+    }
+
+    /**
+     * Create an instance of {@link SetStatusDeployedResponse }
+     * 
+     */
+    public SetStatusDeployedResponse createSetStatusDeployedResponse() {
+        return new SetStatusDeployedResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetProjects }
+     * 
+     */
+    public GetProjects createGetProjects() {
+        return new GetProjects();
+    }
+
+    /**
+     * Create an instance of {@link CreateTaskResponse }
+     * 
+     */
+    public CreateTaskResponse createCreateTaskResponse() {
+        return new CreateTaskResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetProjectsStagesResponse }
+     * 
+     */
+    public GetProjectsStagesResponse createGetProjectsStagesResponse() {
+        return new GetProjectsStagesResponse();
+    }
+
+    /**
+     * Create an instance of {@link CreateTask }
+     * 
+     */
+    public CreateTask createCreateTask() {
+        return new CreateTask();
+    }
+
+    /**
+     * Create an instance of {@link GetTasks }
+     * 
+     */
+    public GetTasks createGetTasks() {
+        return new GetTasks();
+    }
+
+    /**
+     * Create an instance of {@link Employee }
+     * 
+     */
+    public Employee createEmployee() {
+        return new Employee();
+    }
+
+    /**
+     * Create an instance of {@link SetStatusDone }
+     * 
+     */
+    public SetStatusDone createSetStatusDone() {
+        return new SetStatusDone();
+    }
+
+    /**
+     * Create an instance of {@link GetCurrentUserResponse }
+     * 
+     */
+    public GetCurrentUserResponse createGetCurrentUserResponse() {
+        return new GetCurrentUserResponse();
+    }
+
+    /**
+     * Create an instance of {@link SetStatusPausedResponse }
+     * 
+     */
+    public SetStatusPausedResponse createSetStatusPausedResponse() {
+        return new SetStatusPausedResponse();
+    }
+
+    /**
+     * Create an instance of {@link FindStatusesResponse }
+     * 
+     */
+    public FindStatusesResponse createFindStatusesResponse() {
+        return new FindStatusesResponse();
+    }
+
+    /**
+     * Create an instance of {@link FindEmployees }
+     * 
+     */
+    public FindEmployees createFindEmployees() {
+        return new FindEmployees();
+    }
+
+    /**
+     * Create an instance of {@link GetCurrentUser }
+     * 
+     */
+    public GetCurrentUser createGetCurrentUser() {
+        return new GetCurrentUser();
     }
 
     /**
@@ -486,11 +478,19 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetProjects }
+     * Create an instance of {@link SetStatusInProgress }
      * 
      */
-    public GetProjects createGetProjects() {
-        return new GetProjects();
+    public SetStatusInProgress createSetStatusInProgress() {
+        return new SetStatusInProgress();
+    }
+
+    /**
+     * Create an instance of {@link ProjectStage }
+     * 
+     */
+    public ProjectStage createProjectStage() {
+        return new ProjectStage();
     }
 
 }

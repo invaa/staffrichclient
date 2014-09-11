@@ -97,8 +97,7 @@
 					<xs:element name="Estimate"
 							type="xs:float"/>
 					<xs:element name="ExternalId"
-							type="xs:string"
-							nillable="true"/>
+							type="xs:string"/>
 					<xs:element name="Assignee"
 							type="tns:Employee"
 							nillable="true"/>
@@ -192,7 +191,7 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="return"
-								type="tns:Project"/>
+								type="tns:ProjectList"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -208,7 +207,7 @@
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="return"
-								type="tns:ProjectStage"/>
+								type="tns:ProjectStageList"/>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
@@ -1271,11 +1270,11 @@
 				<wsi:Claim xmlns:wsi="http://ws-i.org/schemas/conformanceClaim/"
 						conformsTo="http://ws-i.org/profiles/basic/1.1"/>
 			</documentation>
-			<soapbind:address location="http://app1msc.assino.net/Assino_ERP/taskmanager.1cws"/>
+			<soapbind:address location="http://app1kvm1kiev/taskmanager.1cws"/>
 		</port>
 		<port name="TaskManagerSoap12"
 				binding="tns:TaskManagerSoap12Binding">
-			<soap12bind:address location="http://app1msc.assino.net/Assino_ERP/taskmanager.1cws"/>
+			<soap12bind:address location="http://app1kvm1kiev/taskmanager.1cws"/>
 		</port>
 	</service>
 </definitions>

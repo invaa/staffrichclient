@@ -77,7 +77,7 @@ public class Task {
     protected String descriptionRu;
     @XmlElement(name = "Estimate")
     protected float estimate;
-    @XmlElement(name = "ExternalId", required = true, nillable = true)
+    @XmlElement(name = "ExternalId", required = true)
     protected String externalId;
     @XmlElement(name = "Assignee", required = true, nillable = true)
     protected Employee assignee;

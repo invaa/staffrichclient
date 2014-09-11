@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://app1msc.assino.net}ProjectStage"/>
+ *         &lt;element name="return" type="{http://app1msc.assino.net}ProjectStageList"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -35,17 +35,17 @@ import javax.xml.bind.annotation.XmlType;
 public class GetProjectsStagesResponse {
 
     @XmlElement(name = "return", required = true)
-    protected ProjectStage _return;
+    protected ProjectStageList _return;
 
     /**
      * Gets the value of the return property.
      * 
      * @return
      *     possible object is
-     *     {@link ProjectStage }
+     *     {@link ProjectStageList }
      *     
      */
-    public ProjectStage getReturn() {
+    public ProjectStageList getReturn() {
         return _return;
     }
 
@@ -54,10 +54,10 @@ public class GetProjectsStagesResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link ProjectStage }
+     *     {@link ProjectStageList }
      *     
      */
-    public void setReturn(ProjectStage value) {
+    public void setReturn(ProjectStageList value) {
         this._return = value;
     }
 
